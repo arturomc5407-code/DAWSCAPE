@@ -1,0 +1,44 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Valoracion;
+use App\Models\Partida;
+use Illuminate\Http\Request;
+
+class ValoracionController extends Controller
+{
+    public function index()
+    {
+        $valoraciones = Valoracion::orderBy('created_at', 'desc')->get();
+        $total = $valoraciones->count();
+        $media = $total > 0 ? round($valoraciones->avg('estrellas'), 1) : 0;
+
+        return view('admin.valoraciones', compact('valoraciones', 'total', 'media'));
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'partida_id' => 'required|exists:partidas,id',
+            'estrellas' => 'required|integer|min:1|max:5',
+            'comentario' => 'nullable|string|max:1000',
+        ]);
+
+        $partida = Partida::findOrFail($request->partida_id);
+
+        $already = Valoracion::where('partida_id', $partida->id)->first();
+        if ($already) {
+            return response()->json(['success' => false, 'message' => 'Ya valorado'], 400);
+        }
+
+        Valoracion::create([
+            'partida_id' => $partida->id,
+            'nombre_equipo' => $partida->nombre_equipo,
+            'estrellas' => $request->estrellas,
+            'comentario' => $request->comentario,
+        ]);
+
+        return response()->json(['success' => true]);
+    }
+}

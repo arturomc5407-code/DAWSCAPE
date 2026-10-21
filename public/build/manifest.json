@@ -1,0 +1,50 @@
+{
+  "resources/css/admin.css": {
+    "file": "assets/admin-BTYz3xoP.css",
+    "src": "resources/css/admin.css",
+    "isEntry": true,
+    "name": "admin",
+    "names": [
+      "admin.css"
+    ]
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-Ctp8T7Sf.css",
+    "src": "resources/css/app.css",
+    "isEntry": true,
+    "name": "app",
+    "names": [
+      "app.css"
+    ]
+  },
+  "resources/css/maquina-cafe.css": {
+    "file": "assets/maquina-cafe-CeQMGXc0.css",
+    "src": "resources/css/maquina-cafe.css",
+    "isEntry": true,
+    "name": "maquina-cafe",
+    "names": [
+      "maquina-cafe.css"
+    ]
+  },
+  "resources/css/prueba6.css": {
+    "file": "assets/prueba6-B8KmjsV6.css",
+    "src": "resources/css/prueba6.css",
+    "isEntry": true,
+    "name": "prueba6",
+    "names": [
+      "prueba6.css"
+    ]
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-BqxIeMDL.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/js/prueba6.js": {
+    "file": "assets/prueba6-C8Jk48vK.js",
+    "name": "prueba6",
+    "src": "resources/js/prueba6.js",
+    "isEntry": true
+  }
+}
